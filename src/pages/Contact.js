@@ -1,11 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Layout from "../components/Layout/Layout";
 import "../Style/contact.css";
 
 
 
 export default function ContactUs() {
   return (
+    <Layout>
     <Container className="my-3">
       <Row ClassName="mb-5 mt-3">
         <Col lg="8">
@@ -72,5 +74,6 @@ export default function ContactUs() {
         </Col>
       </Row>
     </Container>
+    </Layout>
   );
 }
