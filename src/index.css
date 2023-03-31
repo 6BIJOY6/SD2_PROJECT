@@ -165,39 +165,96 @@ code {
   font-weight: bolder;
 
 }
+ /* sign up */
+.signup-content{
+  display: flex;
+  box-shadow: turquoise;
+  background-origin: border-box;
+}
+.from-title{
+  color: aqua;
+  display: inline-flex;
+  padding-bottom: 10%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+}
 
-/* contact us
-body {
-  background: linear-gradient(
-    -80deg,
-    rgb(7, 224, 72) 40%,
-    rgb(240, 218, 19) 60%
-  );
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding-top: 60px;
+/* sign in */
+/* Style for container and section */
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.contact_form .form-control {
-  padding: 1.37rem 0.75rem;
-  line-height: 1.5;
-  color: rgb(2, 9, 17);
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  
 }
-.contact_form input.form-control {
-  margin-bottom: 2rem;
-  height: calc(2.5rem +0.75rem +2px);
+.signin-content{
+  display: flex;
 }
- .btn {
-  color: rgb(150, 20, 236);
-  background-color: rgb(32, 160, 219);
-} 
-.btn:hover {
-  color: rgb(14, 28, 230);
-  box-shadow: 0.8px 0.8px 12px 12px rgb(190, 4, 113);
+
+/* Style for image and login form */
+.signin-image {
+  width: 50%;
+  margin-right: 20%;
 }
-h1 {
-  text-align: center;
-  margin-left: 30%;
+
+.signup-form {
+  width: 50%;
 }
-button {
+
+/* Style for headline */
+.from-title {
   text-align: center;
 }
- */
+
+/* Style for form group */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+/* Style for input field */
+input {
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #999;
+  outline: none;
+}
+
+input:focus {
+  border-bottom: 1px solid #007bff;
+}
+
+/* Style for form button */
+.form-button {
+  text-align: center;
+}
+
+.form-submit {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #0069d9;
+}
