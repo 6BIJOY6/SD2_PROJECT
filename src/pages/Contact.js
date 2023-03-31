@@ -8,7 +8,7 @@ import "../Style/contact.css";
 export default function ContactUs() {
   return (
     <Layout>
-    <Container className="my-3">
+    <Container className="my-3 contact">
       <Row ClassName="mb-5 mt-3">
         <Col lg="8">
           <h1 className="display-4 mb-4">Contact Me</h1>
