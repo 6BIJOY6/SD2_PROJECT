@@ -1,70 +1,49 @@
 import React from 'react'
-import { NavLink } from 'react-bootstrap';
-import LogIn from './LogIn';
 import Layout from './../components/Layout/Layout';
+import Signup_pic from './../img/undraw_sign_up_n6im.svg'
+
 
 const SignUp = () => {
   return (
     <Layout>
-    <section className="signup">
-      <div className="container mt-5">
-        <div className="signup-content">
-          <div className="signup-form">
-            <h2 className="from-title"> Sign Up </h2>
-              <form className="register-form" id="register-form">
-                <div className="form-group">
-                  <label htmlFor="name">
-                  <i class="zmdi zmdi-account material-icons-name"></i>
-                  </label>
-                  <input type="text" name="name" id="name" autoComplete="off" placeholder="your name"/>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">
-                  <i class="zmdi zmdi-email material-icons-name"></i>
-                  </label>
-                  <input type="text" name="email" id="email" autoComplete="off" placeholder="your Email"/>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="phone">
-                  <i class="zmdi zmdi-phone-in-talk material-icons-name"></i>
-                  </label>
-                  <input type="number" name="phone" id="phone" autoComplete="off" placeholder="your Phone"/>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="password">
-                  <i class="zmdi zmdi-lock material-icons-name"></i>
-                  </label>
-                  <input type="password" name="password" id="password" autoComplete="off" placeholder="your password"/>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="cpassword">
-                  <i class="zmdi zmdi-lock material-icons-name"></i>
-                  </label>
-                  <input type="password" name="cpassword" id="cpassword" autoComplete="off" placeholder="Confirm password"/>
-                </div>
-                <div className="form-group form-button">
-                  <input type="submit" name="signup" id="signup" className="form-submit" value="register"/>
-                </div>
-              </form>
-              </div>
-              <div className="signup-image">
-                <figure>
-                  <img src="https://cdn.dribbble.com/users/324533/screenshots/1419546/e-commerce.gif" alt=""></img>
-                </figure>
-                <NavLink to="/login" className="signup-image-link">I am already register
-                </NavLink>
-              </div>
-            
-          
-        </div>
-
+    <div className="main-container">
+      <div className="image-container">
+        <img src={Signup_pic} alt="Signup" />
       </div>
-
-    </section>
+      <div className="form-container">
+        <h2 className="signup_heading">Sign Up</h2>
+        <form>
+          <div className="form-group">
+            <label htmlFor="name" className='signup_label'>Name</label>
+            <input type="text" id="name" className='signup_input'/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="email" className='signup_label'>Email</label>
+            <input type="email" id="email" className='signup_input'/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone" className='signup_label'>Phone</label>
+            <input type="tel" id="phone" className='signup_input'/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="address" className='signup_label'>Address</label>
+            <input type="text" id="address" className='signup_input'/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password" className='signup_label'>Password</label>
+            <input type="password" id="password" className='signup_input' />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirm-password" className='signup_label'>Confirm Password</label>
+            <input type="password" id="confirm-password" className='signup_input' />
+          </div>
+          <button type="submit" className='signup_button'>Sign Up</button>
+        </form>
+        <p className='p_head'>
+          Already have an account? <a className='l_p' href="/login">Login</a>
+        </p>
+      </div>
+    </div>
     </Layout>
   )
 }
