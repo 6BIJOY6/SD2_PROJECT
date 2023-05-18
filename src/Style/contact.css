@@ -15,14 +15,14 @@
     margin-bottom: 2rem;
     height: calc(2.5rem +0.75rem +2px);
   }
-   .btn {
-    color: rgb(150, 20, 236);
-    background-color: rgb(32, 160, 219);
-  } 
-  .btn:hover {
+   /* .btn {
+    color: rgb(114, 231, 19);
+    background-color: rgb(241, 207, 12);
+  }  */
+  /* .btn:hover {
     color: rgb(14, 28, 230);
     box-shadow: 0.8px 0.8px 12px 12px rgb(190, 4, 113);
-  }
+  } */
   h1 {
     text-align: center;
     /* margin-left: 30%; */

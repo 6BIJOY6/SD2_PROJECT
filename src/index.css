@@ -295,7 +295,7 @@ code {
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 38px;
 }
 
 .login-button:hover {
@@ -307,6 +307,22 @@ code {
 }
 
 .signup-link {
-  color: #0bd2e0;
+  color: #0be0bd;
   text-decoration: none;
+}
+
+.forgot-password-button {
+  background-color: #f01414;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 35px;
+}
+
+.forgot-password-button:hover {
+  background-color: #4be7a6;
 }
