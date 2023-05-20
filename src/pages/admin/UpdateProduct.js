@@ -102,6 +102,7 @@ const UpdateProduct = () => {
       toast.error("Something went wrong");
     }
   };
+
   return (
     <Layout title={"Dashboard - Create Product"}>
       <div className="container-fluid m-3 p-3">
@@ -166,7 +167,7 @@ const UpdateProduct = () => {
                 <input
                   type="text"
                   value={name}
-                  placeholder="write a name"
+                  placeholder="Write a name"
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -175,7 +176,7 @@ const UpdateProduct = () => {
                 <textarea
                   type="text"
                   value={description}
-                  placeholder="write a description"
+                  placeholder="Write a description"
                   className="form-control"
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -185,7 +186,7 @@ const UpdateProduct = () => {
                 <input
                   type="number"
                   value={price}
-                  placeholder="write a Price"
+                  placeholder="Write a price"
                   className="form-control"
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -194,7 +195,7 @@ const UpdateProduct = () => {
                 <input
                   type="number"
                   value={quantity}
-                  placeholder="write a quantity"
+                  placeholder="Write a quantity"
                   className="form-control"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
@@ -202,7 +203,7 @@ const UpdateProduct = () => {
               <div className="mb-3">
                 <Select
                   bordered={false}
-                  placeholder="Select Shipping "
+                  placeholder="Select Shipping"
                   size="large"
                   showSearch
                   className="form-select mb-3"

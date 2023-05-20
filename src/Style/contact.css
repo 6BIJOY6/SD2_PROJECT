@@ -1,32 +1,32 @@
 .contact {
-    background: linear-gradient(
-      -80deg,
-      rgb(7, 224, 72) 40%,
-      rgb(240, 218, 19) 60%
-    );
-   
-  }
-  .contact_form .form-control {
-    padding: 1.37rem 0.75rem;
-    line-height: 1.5;
-    color: rgb(2, 9, 17);
-  }
-  .contact_form input.form-control {
-    margin-bottom: 2rem;
-    height: calc(2.5rem +0.75rem +2px);
-  }
-   /* .btn {
-    color: rgb(114, 231, 19);
-    background-color: rgb(241, 207, 12);
-  }  */
-  /* .btn:hover {
-    color: rgb(14, 28, 230);
-    box-shadow: 0.8px 0.8px 12px 12px rgb(190, 4, 113);
-  } */
-  h1 {
-    text-align: center;
-    /* margin-left: 30%; */
-  }
-  button {
-    text-align: center;
-  }
+  background: linear-gradient(-80deg, rgb(7, 224, 72) 40%, rgb(240, 218, 19) 60%);
+}
+
+.contact_form .form-control {
+  padding: 1.37rem 0.75rem;
+  line-height: 1.5;
+  color: rgb(2, 9, 17);
+}
+
+.contact_form input.form-control {
+  margin-bottom: 2rem;
+  height: calc(2.5rem + 0.75rem + 2px);
+}
+
+.contact_form textarea.form-control {
+  resize: none;
+}
+
+.btn.ac_btn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(14, 28, 230);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn.ac_btn:hover {
+  background-color: rgb(4, 80, 217);
+}

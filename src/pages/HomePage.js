@@ -1,19 +1,20 @@
-import React,{useState,useEffect} from 'react'
-import Layout from '../components/Layout/Layout'
+import React, { useState, useEffect } from 'react';
+import Layout from '../components/Layout/Layout';
 import axios from 'axios';
-import { Checkbox , Radio} from 'antd';
+import { Checkbox, Radio } from 'antd';
 import { Prices } from './../components/PriceFilter';
+import Bannar from './../components/Bannar';
+
 const HomePage = () => {
-  const[products,setProducts] = useState([]);
-  const[categories,setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
-
-  //get all catagory
+  // get all category
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
@@ -29,8 +30,8 @@ const HomePage = () => {
     getAllCategory();
     getTotal();
   }, []);
-  
-   //get products
+
+  // get products
   const getAllProducts = async () => {
     try {
       setLoading(true);
@@ -43,7 +44,7 @@ const HomePage = () => {
     }
   };
 
-  //getTOtal COunt
+  // get total count
   const getTotal = async () => {
     try {
       const { data } = await axios.get("http://localhost:8080/api/v1/product/product-count");
@@ -52,25 +53,26 @@ const HomePage = () => {
       console.log(error);
     }
   };
-
   useEffect(() => {
     if (page === 1) return;
     loadMore();
+    // eslint-disable-next-line
   }, [page]);
-  //load more
+
+  // load more
   const loadMore = async () => {
     try {
       setLoading(true);
       const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
       setLoading(false);
-      setProducts([...products, ...data?.products]);
+      setProducts((prevProducts) => [...prevProducts, ...data?.products]);
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
   };
 
-   // filter by catagory
+  // filter by category
   const handleFilter = (value, id) => {
     let all = [...checked];
     if (value) {
@@ -81,15 +83,22 @@ const HomePage = () => {
     setChecked(all);
   };
   useEffect(() => {
-    if (!checked.length || !radio.length) getAllProducts();
+    if (!checked.length && !radio.length) {
+      getAllProducts();
+    }
+    // eslint-disable-next-line
   }, [checked.length, radio.length]);
 
   useEffect(() => {
-    if (checked.length || radio.length) filterProduct();
+    if (checked.length || radio.length) {
+      filterProduct();
+      // eslint-disable-next-line
+    }
   }, [checked, radio]);
 
 
-   //get filterd product
+
+  // get filtered product
   const filterProduct = async () => {
     try {
       const { data } = await axios.post("http://localhost:8080/api/v1/product/product-filters", {
@@ -101,14 +110,12 @@ const HomePage = () => {
       console.log(error);
     }
   };
-  
   return (
     <Layout>
+      <Bannar />
       <div className='row mt-3'>
         <div className='col-md-3'>
-          <h4  className='text-center'>
-            Category
-          </h4>
+          <h4 className='text-center'>Category</h4>
           <div className="d-flex flex-column">
             {categories?.map((c) => (
               <Checkbox
@@ -140,48 +147,44 @@ const HomePage = () => {
           </div>
         </div>
         <div className='col-md-9'>
-          <h1 className='text-center'>
-            All products
-          </h1>
-          <div className='d-flex flex-wrap'>
-          {products?.map((p) => (
-              
-                <div className="card m-2" style={{ width: "18rem" }}>
-                  <img
-                    src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
-                    alt={p.name}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text">
-                    {p.description.substring(0, 30)}...
-                  </p>
-                  <p className="card-text">  {p.price} tk</p>
-                  <button class="btn btn-primary ms-1">More Details</button>
-                  <button class="btn btn-secondary ms-1">ADD TO CART</button>
+          <h1 className='text-center'>All products</h1>
+          <div className='d-flex flex-wrap justify-content-center'>
+            {products?.slice(0, 6).map((p) => (
+              <div className="card m-2" style={{ width: "18rem" }} key={p._id}>
+                <img
+                  src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
+                  className="card-img-top"
+                  alt={p.name}
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{p.name}</h5>
+                  <p className="card-text">{p.description.substring(0, 30)}...</p>
+                  <p className="card-text">{p.price} tk</p>
+                  <div className="d-flex justify-content-between">
+                    <button className="btn btn-primary">More Details</button>
+                    <button className="btn btn-secondary">ADD TO CART</button>
                   </div>
                 </div>
+              </div>
             ))}
           </div>
-          <div className="m-2 p-3">
-            {products && products.length < total && (
+          {products && products.length < total && (
+            <div className="m-2 p-3 d-flex justify-content-center">
               <button
                 className="btn btn-warning"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
+                onClick={() => {
+                  setPage((prevPage) => prevPage + 1);
                 }}
               >
-                {loading ? "Loading ..." : "Loadmore"}
+                {loading ? "Loading ..." : "Load more"}
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
-
     </Layout>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
