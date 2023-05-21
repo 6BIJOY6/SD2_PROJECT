@@ -4,8 +4,13 @@ import axios from 'axios';
 import { Checkbox, Radio } from 'antd';
 import { Prices } from './../components/PriceFilter';
 import Bannar from './../components/Bannar';
+import { useCart } from '../context/card';
+import { toast } from 'react-hot-toast';
+
+
 
 const HomePage = () => {
+  const[cart, setCart]= useCart([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -92,8 +97,9 @@ const HomePage = () => {
   useEffect(() => {
     if (checked.length || radio.length) {
       filterProduct();
-      // eslint-disable-next-line
+      
     }
+    // eslint-disable-next-line
   }, [checked, radio]);
 
 
@@ -163,7 +169,10 @@ const HomePage = () => {
                   <p className="card-text">{p.price} tk</p>
                   <div className="d-flex justify-content-between">
                     <button className="btn btn-primary">More Details</button>
-                    <button className="btn btn-secondary">ADD TO CART</button>
+                    <button className="btn btn-secondary" onClick={() =>{
+                      setCart([...cart,p]);
+                      toast.success("Item Added to cart");
+                    }}>ADD TO CART</button>
                   </div>
                 </div>
               </div>
