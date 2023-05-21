@@ -155,7 +155,7 @@ const HomePage = () => {
         <div className='col-md-9'>
           <h1 className='text-center'>All products</h1>
           <div className='d-flex flex-wrap justify-content-center'>
-            {products?.slice(0, 6).map((p) => (
+            {products?.slice(0, Math.max(6, products.length)).map((p) => (
               <div className="card m-2" style={{ width: "18rem" }} key={p._id}>
                 <img
                   src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`}
