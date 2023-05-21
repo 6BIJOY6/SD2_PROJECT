@@ -111,7 +111,7 @@ const Profile = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" disabled>
                   UPDATE
                 </button>
               </form>
