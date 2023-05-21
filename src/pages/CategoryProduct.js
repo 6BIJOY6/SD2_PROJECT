@@ -11,10 +11,12 @@ const CategoryProduct = () => {
 
   useEffect(() => {
     if (params?.slug) getProductsByCat();
+    // eslint-disable-next-line
   }, [params?.slug]);
 
   const getProductsByCat = async () => {
     try {
+      
       const { data } = await axios.get(
         `http://localhost:8080/api/v1/product/product-category/${params.slug}`
       );

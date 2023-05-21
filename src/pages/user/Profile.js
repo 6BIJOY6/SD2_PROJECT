@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import UserMenu from "../../components/Layout/UserMenu";
 import Layout from "./../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
-import toast from "react-hot-toast";
-import axios from "axios";
+// import toast from "react-hot-toast";
+// import axios from "axios";
 const Profile = () => {
   //context
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   //state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,6 +20,7 @@ const Profile = () => {
     setName(name);
     setPhone(phone);
     setEmail(email);
+    setPassword(password);
     setAddress(address);
   }, [auth?.user]);
 
