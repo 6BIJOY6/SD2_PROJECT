@@ -11,6 +11,7 @@ const CategoryProduct = () => {
 
   useEffect(() => {
     if (params?.slug) getProductsByCat();
+    // eslint-disable-next-line
   }, [params?.slug]);
 
   const getProductsByCat = async () => {
