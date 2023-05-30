@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 import toast from 'react-hot-toast';
 import useCategory from '../../hooks/useCategory';
-import { useCart } from '../../context/card';
+import { useCart } from '../../context/cart';
 import { Badge } from 'antd';
 
 const Header = () => {

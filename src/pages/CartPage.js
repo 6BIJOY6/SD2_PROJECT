@@ -1,28 +1,32 @@
 import React from "react";
 import Layout from "./../components/Layout/Layout";
-import { useCart } from "../context/card";
+import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
+
 
 const CartPage = () => {
   const [auth] = useAuth();
   const [cart, setCart] = useCart();
+
   
 
-  // //total price
-  // const totalPrice = () => {
-  //   try {
-  //     let total = 0;
-  //     cart?.forEach((item) => {
-  //       total += item.price;
-  //     });
-  //     return total.toLocaleString("en-BD", {
-  //       style: "currency",
-  //       currency: "Tk",
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  //total price
+  const totalPrice = () => {
+    try {
+      let total = 0;
+      cart?.map((p) => {
+        total += p.price;
+        return null;
+      });
+      return total;
+      // return total.toLocaleString("en-BD", {
+      //   style: "currency",
+      //   currency: "BDT",
+      // });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
   //detele item
   const removeCartItem = (pid) => {
@@ -45,7 +49,7 @@ const CartPage = () => {
               {`Hello ${auth?.token && auth?.user?.name}`}
             </h1>
             <h4 className="text-center">
-              {cart?.length
+              {cart?.length>0
                 ? `You Have ${cart.length} items in your cart ${
                     auth?.token ? "" : "please login to checkout"
                   }`
@@ -84,7 +88,7 @@ const CartPage = () => {
             <h2>Cart Summary</h2>
             <p>Total | Checkout | Payment</p>
             <hr />
-            <h4>Total :  </h4>
+            <h4>Total : {totalPrice()} Tk </h4>
             
           </div>
         </div>

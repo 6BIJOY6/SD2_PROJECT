@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Checkbox, Radio } from 'antd';
 import { Prices } from './../components/PriceFilter';
 import Bannar from './../components/Bannar';
-import { useCart } from '../context/card';
+import { useCart } from '../context/cart';
 import { toast } from 'react-hot-toast';
 
 
@@ -172,6 +172,7 @@ const HomePage = () => {
                     <button className="btn btn-primary">More Details</button>
                     <button className="btn btn-secondary" onClick={() =>{
                       setCart([...cart,p]);
+                      localStorage.setItem('cart',JSON.stringify([...cart,p]))
                       toast.success("Item Added to cart");
                     }}>ADD TO CART</button>
                   </div>
