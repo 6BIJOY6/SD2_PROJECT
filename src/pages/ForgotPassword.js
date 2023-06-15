@@ -44,7 +44,7 @@ const ForgotPassword = () => {
       <div className="login-container">
         <h2 className="login-heading">Reset Password</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <input type="text" className="login-input" placeholder="Username"  value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input type="text" className="login-input" placeholder="Email"  value={email} onChange={(e) => setEmail(e.target.value)}/>
           <input type="password" className="login-input" placeholder="newPassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
           <input type="text" className="login-input" placeholder="Enter your father's name" value={answer} onChange={(e) => setAnswer(e.target.value)}/>
           

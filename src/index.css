@@ -47,9 +47,25 @@ code {
   border-radius: 0;
 }
 .search-form button {
-  background-color: #000000;
+  background-color: #3bf095;
   border-radius: 0;
   color: rgb(13, 212, 40);
+}
+.login_nav-link{
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid transparent; 
+  border-radius: 5px;
+  color: #0c0c0c; 
+  text-decoration: none;
+  transition: border-color 0.3s; 
+
+  
+  background-color: #5aee9d;
+}
+.login_nav-link:hover{
+  border-color: #09fa29; /* Green border color on hover */
+  background-color: #0ce4f3;
 }
 
 /* footer */
@@ -86,22 +102,13 @@ code {
   opacity: 0.9;
 }
 
-/* @media (max-width:767px) {
-  .footer-dark .item:not(.social) {
-    text-align:center;
-    padding-bottom:20px;
-  }
-} */
+
 
 .footer-dark .item.text {
   margin-bottom: 36px;
 }
 
-/* @media (max-width:767px) {
-  .footer-dark .item.text {
-    margin-bottom:0;
-  }
-} */
+
 
 .footer-dark .item.text p {
   opacity: 0.6;
@@ -112,13 +119,7 @@ code {
   text-align: center;
 }
 
-/* 
-@media (max-width:991px) {
-  .footer-dark .item.social {
-    text-align:center;
-    margin-top:20px;
-  }
-} */
+
 
 .footer-dark .item.social > a {
   font-size: 20px;
@@ -312,8 +313,10 @@ code {
 }
 
 .forgot-password-button {
-  background-color: #f01414;
-  color: #ffffff;
+  
+  justify-content: center;
+  background-color: #5deedb;
+  color: #f01b1b;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -336,3 +339,52 @@ code {
     height: 300px;
   }
 }
+/* homepage */
+.card-text_price{
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.card-title{
+  font-size: 15px;
+  font-weight: bold;
+}
+.card-img-top:hover{
+  transform: scale(0.9);
+}
+.brand_logo:hover{
+  transform: scale(0.9);
+}
+/* productdetails */
+
+.product-details {
+  margin-top: 100px;
+}
+
+.product-details-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-details-info h6 {
+  margin-bottom: 20px;
+}
+.similar-products button {
+  border-radius: 0;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card-title_details{
+  font-size: 50px;
+  font-weight: bolder;
+
+}
+
+.card-title_des{
+  font-weight: bolder;
+  font-size: larger;
+}
+

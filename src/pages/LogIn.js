@@ -51,7 +51,7 @@ const LogIn = () => {
       <div className="login-container">
         <h2 className="login-heading">Log In</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <input type="text" className="login-input" placeholder="Username"  value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input type="text" className="login-input" placeholder="Email"  value={email} onChange={(e) => setEmail(e.target.value)}/>
           <input type="password" className="login-input" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
           <button type="submit" className="login-button">Login</button>
         </form>
