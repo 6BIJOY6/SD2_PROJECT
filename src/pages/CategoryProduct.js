@@ -45,7 +45,7 @@ const CategoryProduct = () => {
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text">{p.description.substring(0, 30)}...</p>
-                    <p className="card-text">$ {p.price}</p>
+                    <p className="card-text_price">{p.price} tk</p>
                     <div className="d-flex justify-content-center">
                       <button
                         className="btn btn-primary me-2"
